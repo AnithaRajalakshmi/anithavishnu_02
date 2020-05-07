@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>Please enter valid message
+</template>
+  </category>
+<category>
+    <pattern>room booking</pattern>
+    <template>How many rooms do you need to book</template>
+</category>
+
+
+
+
+
+
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
+</aiml>
