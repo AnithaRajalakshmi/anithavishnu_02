@@ -1,22 +1,330 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml>
-  <category>
-    <pattern>*</pattern>
-    <template>Please enter valid message
-</template>
-  </category>
+<aiml version="2.0">
 <category>
-    <pattern>room booking</pattern>
-    <template>How many rooms do you need to book</template>
+    <pattern>Hi</pattern>
+    <template>Hi, Please enter your name as "My name is "</template>
 </category>
-
-
-
-
-
-
 <category>
-    <pattern></pattern>
+    <pattern>Hello</pattern>
+    <template><srai>Hi</srai></template>
+</category>
+<category>
+    <pattern>I am * from #</pattern>
+    <template>Hello <set name="customername"><star index="1"/></set>,<think><set name="customerlocation"><star index="2"/></set></think> How can I help you?</template>
+</category>
+<category>
+    <pattern>my name is *</pattern>
+    <template>Hello <set name="customername"><star/></set>. Where are from?</template>
+</category>
+<category>
+    <pattern>i am *</pattern>
+    <template><srai>my name is <set name="customername"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>name is *</pattern>
+    <template><srai>my name is <set name="customername"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>name *</pattern>
+    <template><srai>my name is <set name="customername"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>* here</pattern>
+    <template><srai>my name is <set name="customername"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>i am from *</pattern>
+    <template>Ok <get name="customername"></get>. How can I help you?<think><set name="customerlocation"><star index="1"/></set></think></template>
+</category>
+<category>
+    <pattern>from * place</pattern>
+    <template><srai>i am from <set name="customerlocation"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>from * this place</pattern>
+    <template><srai>i am from <set name="customerlocation"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>place *</pattern>
+    <template><srai>i am from <set name="customerlocation"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>place is *</pattern>
+    <template><srai>i am from <set name="customerlocation"><star index="1"/></set></srai></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> rooms</pattern>
+    <template>Ok, booking <set name="numberofrooms"><star index="1"></star></set> rooms. What type of room do you like to book?</template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> room</pattern>
+    <template><srai>book <set name="numberofrooms"><star index="1"></star></set> rooms</srai></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> rooms</pattern>
+    <template><srai>book <set name="numberofrooms"><star index="1"></star></set> rooms</srai></template>
+</category>
+<category>
+    <pattern>for <set>personcount</set> members</pattern>
+    <template>Can you provide number of days stay.<think><set name="numberofperson"><star index="1"></star></set></think></template>
+</category>
+<category>
+    <pattern>for <set>personcount</set> people</pattern>
     <template></template>
 </category>
+<category>
+    <pattern>for <set>personcount</set> member</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomsize</set> room type</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomsize</set>rooms type</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> room</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>for  <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>stay of  <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to stay of  <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>going to stay for  <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>stay of <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>going to stay for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to stay of <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>My name is * and I am from *</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>I am * from *</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Name is * from *</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Name * and place *</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>* here and from *</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>My name is * and  I am from * place</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>I am * from * this place</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Name is * from * place</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Name * and place * </pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>* here and from * place</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>for <set>personcount</set> persons we need <set>roomnumbers</set> <set>roomsize</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>i need <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomnumbers</set> nooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomnumbers</set> single rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>i need <set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomnumbers</set> single room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern><set>roomsize</set> <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>for <set>roomnumbers</set> days i need <set>dayscount</set> rooms</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>i need to book <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> <set>roomsize</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>i need book <set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> <set>roomsize</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomsize</set> <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book for <set>roomnumbers</set> days i need <set>dayscount</set> rooms</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> <set>roomsize</set> rooms for <set>dayscount</set> days</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> <set>roomsize</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomsize</set> <set>roomnumbers</set> room for <set>dayscount</set> day</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book for <set>roomnumbers</set> days i need <set>dayscount</set> rooms</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> rooms for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> rooms for <set>personcount</set> people</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> rooms for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> rooms for <set>personcount</set> people</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>For <set>personcount</set> members need to book <set>roomnumbers</set> rooms</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>For <set>personcount</set> people need to book <set>roomnumbers</set> rooms</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> room for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>book <set>roomnumbers</set> room for <set>personcount</set> people</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> room for <set>personcount</set> members</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>to book <set>roomnumbers</set> room for <set>personcount</set> people</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>For <set>personcount</set> member need to book <set>roomnumbers</set> room</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>For <set>personcount</set> people need to book <set>roomnumbers</set> room</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Book <set>roomnumbers</set> <set>roomsize</set> room </pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>To book <set>roomnumbers</set> <set>roomsize</set> room</pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>Book <set>roomnumbers</set> <set>roomsize</set> rooms </pattern>
+    <template></template>
+</category>
+<category>
+    <pattern>To book <set>roomnumbers</set> <set>roomsize</set> rooms</pattern>
+    <template></template>
+</category>
+
+
+
 </aiml>
